@@ -3,7 +3,9 @@ import { render } from 'react-dom';
 
 import App from 'App';
 
+const props = window.PROPS;
+
 render(
-    <App />,
+    <App {...props} />,
     document,
 );

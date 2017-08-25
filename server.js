@@ -1,5 +1,8 @@
 require('babel-register')({
 	presets: ['es2015', 'react', 'stage-0'],
+    plugins: [
+        "transform-decorators-legacy"
+    ]
 });
 
 const express = require('express');
@@ -13,7 +16,8 @@ const App = require('./src/App').default;
 app.use(express.static('public'));
 
 app.get('/', (request, response) => {
-	const html = renderToString(React.createElement(App));
+	const props = { title: 'Universal React application' };
+	const html = renderToString(React.createElement(App, props));
 	response.send(html);
 });
 
