@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'autobind-decorator';
+import styles from './App.css';
 
 export default class App extends Component {
     @autoBind
@@ -18,7 +19,7 @@ export default class App extends Component {
             </head>
             <body>
             <div>
-                <h1>{title}</h1>
+                <h1 className={styles.title}>{title}</h1>
                 <button onClick={this.onHandleClick}>click me</button>
             </div>
             <script dangerouslySetInnerHTML={{
